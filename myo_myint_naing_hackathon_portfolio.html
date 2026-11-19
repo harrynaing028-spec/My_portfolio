@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="A student developer portfolio showcasing technical skills, learning journey, and projects.">
+  <title>My Developer Portfolio</title>
+  <style>
+    :root {
+      --bg: #f6f8f5;
+      --surface: #ffffff;
+      --ink: #17231d;
+      --muted: #627168;
+      --green: #26734d;
+      --green-dark: #185437;
+      --line: #e1e9e2;
+      --soft: #eaf3ec;
+    }
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--ink);
+      background: var(--bg);
+      line-height: 1.65;
+    }
+    a { color: var(--green-dark); }
+    .container { width: min(1000px, 90%); margin: auto; }
+    header {
+      background: rgba(255,255,255,.94);
+      border-bottom: 1px solid var(--line);
+      position: sticky; top: 0; z-index: 5;
+      backdrop-filter: blur(10px);
+    }
+    nav {
+      min-height: 66px; display: flex; align-items: center;
+      justify-content: space-between; gap: 18px;
+    }
+    .brand { font-weight: 800; color: var(--green-dark); text-decoration: none; }
+    .nav-links { display: flex; flex-wrap: wrap; gap: 18px; }
+    .nav-links a { text-decoration: none; font-size: .93rem; color: var(--muted); }
+    .nav-links a:hover { color: var(--green); }
+    .hero { padding: 86px 0 70px; }
+    .eyebrow {
+      display: inline-block; background: var(--soft); color: var(--green-dark);
+      padding: 6px 12px; border-radius: 999px; font-size: .85rem; font-weight: 700;
+    }
+    h1 { font-size: clamp(2.4rem, 7vw, 4.4rem); line-height: 1.08; margin: 20px 0 16px; letter-spacing: -1.8px; }
+    h1 span { color: var(--green); }
+    .intro { max-width: 680px; color: var(--muted); font-size: 1.1rem; }
+    .actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 28px; }
+    .button {
+      display: inline-block; padding: 11px 18px; border-radius: 9px;
+      text-decoration: none; font-weight: 700; border: 1px solid var(--green);
+    }
+    .primary { background: var(--green); color: white; }
+    .secondary { color: var(--green-dark); background: white; }
+    section { padding: 54px 0; }
+    .section-title { font-size: 1.8rem; margin: 0 0 8px; }
+    .section-lead { color: var(--muted); margin: 0 0 25px; }
+    .panel, .card {
+      background: var(--surface); border: 1px solid var(--line);
+      border-radius: 16px; padding: 23px;
+    }
+    .grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; }
+    .skills { display: flex; flex-wrap: wrap; gap: 10px; }
+    .skill {
+      background: var(--soft); color: var(--green-dark); padding: 8px 12px;
+      border-radius: 8px; font-size: .92rem; font-weight: 700;
+    }
+    .card h3 { margin: 0 0 8px; }
+    .card p { color: var(--muted); margin: 0 0 12px; }
+    .status { font-size: .82rem; font-weight: 700; color: var(--green-dark); }
+    .timeline { border-left: 2px solid var(--line); margin-left: 8px; padding-left: 22px; }
+    .timeline-item { margin: 0 0 22px; }
+    .timeline-item:last-child { margin-bottom: 0; }
+    .timeline-item h3 { margin: 0 0 4px; font-size: 1.05rem; }
+    .timeline-item p { margin: 0; color: var(--muted); }
+    footer { border-top: 1px solid var(--line); padding: 28px 0; color: var(--muted); text-align: center; }
+    @media (max-width: 650px) {
+      nav { align-items: flex-start; padding: 15px 0; flex-direction: column; }
+      .nav-links { gap: 12px; }
+      .hero { padding: 60px 0 45px; }
+      .grid { grid-template-columns: 1fr; }
+      section { padding: 40px 0; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <nav class="container">
+      <a class="brand" href="#home">MY PORTFOLIO</a>
+      <div class="nav-links">
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#journey">Journey</a>
+        <a href="#contact">Contact</a>
+      </div>
+    </nav>
+  </header>
+  <main>
+    <section class="hero container" id="home">
+      <span class="eyebrow">Computer Science Student · Beginner Developer</span>
+      <h1>Hello, I'm <span>Myo Myint Naing</span>.</h1>
+      <p class="intro">
+        I'm a computer science student and beginner developer with some project experience. I enjoy learning how technology can solve real-world problems. I'm building my skills in programming and web development, and I'm excited to learn, collaborate, and create useful solutions.
+      </p>
+      <div class="actions">
+        <a class="button primary" href="#projects">Explore my projects</a>
+        <a class="button secondary" href="https://github.com/harrynaing028-spec" target="_blank" rel="noopener">Visit my GitHub</a>
+      </div>
+    </section>
+
+    <section class="container" id="about">
+      <h2 class="section-title">About me</h2>
+      <p class="section-lead">A little about who I am and what motivates me.</p>
+      <div class="panel">
+        I'm a computer science student interested in software development, especially building websites and practical applications. I have beginner-level skills and some project experience. I enjoy learning by doing, exploring new ideas, and improving through practice. I'm curious, persistent, and ready to learn from new challenges and teamwork.
+      </div>
+    </section>
+
+    <section class="container" id="skills">
+      <h2 class="section-title">Technical skills</h2>
+      <p class="section-lead">Technologies I have studied and am continuing to practise.</p>
+      <div class="panel">
+        <div class="skills">
+          <span class="skill">C++</span>
+          <span class="skill">Python (learning)</span>
+          <span class="skill">HTML</span>
+          <span class="skill">CSS</span>
+          <span class="skill">JavaScript</span>
+          <span class="skill">MySQL / Database concepts</span>
+          <span class="skill">Software analysis & design</span>
+          <span class="skill">Problem-solving</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="projects">
+      <h2 class="section-title">Projects & ideas</h2>
+      <p class="section-lead">A selection of academic work and projects I am developing or planning.</p>
+      <div class="grid">
+        <article class="card">
+          <h3>QR Smart Restaurant Ordering System</h3>
+          <p>A web-based ordering concept where customers scan a table QR code, browse the menu, and send orders to the kitchen. The planned first version includes customer, owner, and kitchen views.</p>
+          <span class="status">In progress · Version 1</span>
+        </article>
+        <article class="card">
+          <h3>Smart Electric Circuit Monitoring System</h3>
+          <p>An academic software analysis and design project focused on monitoring electrical readings and presenting clear status information to users.</p>
+          <span class="status">Academic project · SRS and system design</span>
+        </article>
+        <article class="card">
+          <h3>Smart School Notebook</h3>
+          <p>A project idea for organizing students' subjects, lecture materials, and personal notes in one place.</p>
+          <span class="status">Project idea</span>
+        </article>
+        <article class="card">
+          <h3>Mood to Music</h3>
+          <p>An academic JavaScript project focused on the feeling or mood of the user and find the songs or search the song.</p>
+          <span class="status">Academic project · HTML , CSS and JavaScript</span>
+        </article>
+      </div>
+    </section>
+
+    <section class="container" id="journey">
+      <h2 class="section-title">My learning journey</h2>
+      <p class="section-lead">How I have been developing my technical foundation.</p>
+      <div class="panel timeline">
+        <div class="timeline-item">
+          <h3>Programming fundamentals — C++</h3>
+          <p>Built a foundation in programming logic, variables, conditions, loops, and problem-solving.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Web development</h3>
+          <p>Studied HTML, CSS, and JavaScript and began exploring how to turn ideas into interactive websites.</p>
+        </div>
+        <div class="timeline-item">
+          <h3>Python and continued practice</h3>
+          <p>Started learning Python and continued strengthening my skills through exercises, coursework, and project practice.</p>
+        </div>
+      </div>
+    </section>
+
+    <section class="container" id="contact">
+      <h2 class="section-title">Let's connect</h2>
+      <p class="section-lead">I'm open to learning, collaborating, and meeting other people who enjoy building things with technology.</p>
+      <div class="panel">
+        <p><strong>GitHub:</strong> <a href="https://github.com/harrynaing028-spec" target="_blank" rel="noopener">github.com/harrynaing028-spec</a></p>
+        <p><strong>Email:</strong> harrynaing028@gmail.com</p>
+        <p><strong>Location:</strong> University of Computer Studies (Pathein)</p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">Made with curiosity and a willingness to keep learning · © <span id="year"></span> Myo Myint Naing</div>
+  </footer>
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
