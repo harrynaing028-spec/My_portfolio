@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <title>Mood to Music</title>
+    <link rel="stylesheet" href="styles/search.css">
+</head>
+<body>
+    <button type="button" onclick="goToHome()" style="position:fixed;top:16px;left:16px;z-index:999;border:0;border-radius:50%;width:48px;height:48px;cursor:pointer;">←</button>
+    
+    <h1>Mood to Music 🎵</h1>
+    <p id="internetStatus">Checking internet...</p>
+
+    <div class="music-note note1">🎵</div>
+<div class="music-note note2">🎶</div>
+<div class="music-note note3">🎼</div>
+<div class="music-note note4">🎵</div>
+<div class="music-note note5">🎵</div>
+<div class="music-note note6">🎼</div>
+<div class="music-note note7">🎵</div>
+<div class="music-note note8">🎼</div>
+
+    <!-- Page 1: Search -->
+    <div id="search-page">
+        <div class="search-container">
+            <input type="text" id="searchInput" placeholder="Search music...">
+            <button id="searchButton" onclick="searchMusic()">Search</button>
+        </div>
+        <div id="results"></div>
+    </div>
+
+    <!-- Page 2: Full Player -->
+    <div id="player-page">
+        <div class="header-buttons">
+            <button class="top-btn" onclick="showSearchPage()">⬅️ Back</button>
+            <button class="top-btn" onclick="minimizePlayer()">🔽 Minimize</button>
+        </div>
+
+        <div class="cover-box">
+            <img id="player-cover" src="" alt="Song Cover">
+        </div>
+
+        <div id="player-title" class="song-title-display">Song Title</div>
+
+        <div class="progress-container">
+            <input type="range" id="progressBar" value="0" min="0" max="100" oninput="seekVideo(this.value)">
+        </div>
+<div class="controls">
+            <button class="control-btn" onclick="playPrevSong()">⏮️</button>
+            <button class="control-btn playPauseBtn" onclick="togglePlayPause()">⏸️</button>
+            <button class="control-btn" onclick="playNextSong()">⏭️</button>
+        </div>
+    </div>
+
+    <!-- Mini Player Bar (အောက်ခြေ Bar) -->
+    <div id="mini-player" onclick="maximizePlayer(event)">
+        <div class="mini-info">
+            <img id="mini-cover" src="" alt="Cover">
+            <div>
+                <div id="mini-title" style="font-weight: bold; font-size: 14px;">Song Title</div>
+            </div>
+        </div>
+        <div class="mini-controls" onclick="event.stopPropagation()">
+            <button class="mini-btn" onclick="playPrevSong()">⏮️</button>
+            <button class="mini-btn playPauseBtn" onclick="togglePlayPause()">⏸️</button>
+            <button class="mini-btn" onclick="playNextSong()">⏭️</button>
+        </div>
+    </div>
+
+    <div id="hidden-player-container"></div>
+
+    
+    <script src="config/youtube.js"></script>
+    <script src="scripts/search.js"></script>
+</body>
+</html>

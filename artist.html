@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist Profile</title>
+    <link rel="stylesheet" href="styles/artist-profile.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Noto+Sans+Myanmar:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <button class="page-back-button" onclick="goToArtistList()" aria-label="Back to artists">←</button>
+    
+    <div class="top-bar">
+        <div class="top-bar-left">
+            <div class="avatar-small"><img alt="avatar"></div>
+            <div class="top-bar-info">
+                <span class="top-bar-name"></span>
+                <span class="top-bar-handle"></span>
+            </div>
+        </div>
+        <div class="top-bar-right">
+            <div class="avatar-small"><img alt="avatar"></div>
+            <div class="top-bar-info">
+                <span class="top-bar-name"></span>
+                <span class="top-bar-handle"></span>
+            </div>
+        </div>
+    </div>
+
+    <div class="main-container">
+        <div class="header-section">
+            <div class="dots-menu">
+                <span class="dot"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+            <div class="header-line"></div>
+            <div class="header-text">
+                <div class="header-left-text">
+                    <p>Meet the artist</p>
+                    <p>behind the song you love</p>
+                </div>
+                <div class="header-right-text">
+                    <p>Your favorite artist is here.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="content-area">
+            <div class="main-image-container">
+                <img alt="" class="main-image" id="mainImage">
+                <div class="main-image-overlay"></div>
+            </div>
+
+            <div class="playlist-panel">
+                <template id="track-template">
+                    <div class="playlist-item">
+                        <div class="playlist-thumb"><img alt="thumb"></div>
+                        <div class="playlist-info">
+                            <span class="playlist-title"></span>
+                            <span class="playlist-artist"></span>
+                        </div>
+                        <button class="play-btn-small">▶</button>
+                    </div>
+                </template>
+            </div>
+        </div>
+
+        <div class="bottom-sections">
+            <div class="artist-profile">
+                <h2 class="profile-title-myanmar">About</h2>
+                <h3 class="profile-title"></h3>
+                <p class="profile-desc"></p>
+                <div class="profile-stats">
+                    <div class="stat-item">
+                        <span class="stat-icon">📊</span>
+                        <span class="stat-label">Monthly Listeners: <strong></strong></span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-icon">🎵</span>
+                        <span class="stat-label"></span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="artist-gallery">
+                <h4 class="gallery-title">ARTIST GALLERY</h4>
+                <div class="gallery-grid">
+                    
+                </div>
+            </div>
+        </div>
+
+        <div class="music-player">
+            <div class="music-player-top">
+                <div class="player-track-info">
+                    <img src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=50&h=50&fit=crop" alt="album art" class="player-album-art" id="playerAlbumArt">
+                    <div class="player-track-text">
+                        <span class="player-track-name" id="playerTrackName"></span>
+                        <span class="player-track-artist" id="playerTrackArtist"></span>
+                    </div>
+                </div>
+                <div class="player-controls">
+                    <button class="control-btn" id="prevBtn">⏮</button>
+                    <button class="control-btn play-pause-btn" id="playPauseBtn">▶</button>
+                    <button class="control-btn" id="nextBtn">⏭</button>
+                </div>
+                <div class="player-extra">
+                    <button class="control-btn volume-btn" id="volumeBtn">🔊</button>
+                    <input type="range" class="volume-slider" id="volumeSlider" min="0" max="100" value="75">
+                    <button class="control-btn" id="shuffleBtn">🔀</button>
+                    <button class="control-btn" id="repeatBtn">🔁</button>
+                </div>
+            </div>
+            <div class="player-progress-container">
+                <span class="progress-time" id="currentTime">00:00</span>
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress-fill" id="progressFill"></div>
+                    <div class="progress-thumb" id="progressThumb"></div>
+                </div>
+                <span class="progress-time" id="totalTime">00:00</span>
+            </div>
+        </div>
+
+        <div class="bottom-text"><p></p></div>
+    </div>
+
+    <audio id="audioPlayer" preload="auto"></audio>
+    <script src="scripts/shared/audio.js"></script>
+    <script src="scripts/artists/catalog.js"></script>
+    <script src="scripts/artists/profile.js"></script>
+    <script src="scripts/artists/playback.js"></script>
+</body>
+</html>

@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Mood To Music — You</title>
+
+    <link
+        rel="stylesheet"
+        href="styles/app.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                🎵
+            </div>
+
+            <div class="logo-text">
+                Mood<br>
+                To Music
+            </div>
+
+        </div>
+
+
+        <div class="sidebar-profile">
+
+            <div
+                class="sidebar-avatar"
+                id="sideAvatar"
+            >
+                G
+            </div>
+
+            <div class="sidebar-user-info">
+
+                <h4 id="sideName">
+                    Guest
+                </h4>
+
+                <p id="sideEmail">
+                    Session only
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <nav class="nav-menu">
+
+            <a
+                href="home.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    ⌂
+                </span>
+
+                <span>
+                    Home
+                </span>
+
+            </a>
+
+
+            <a
+                href="you.html"
+                class="nav-item active"
+            >
+
+                <span class="nav-icon">
+                    ◉
+                </span>
+
+                <span>
+                    Your profile
+                </span>
+
+            </a>
+
+
+            <a
+                href="settings.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    ⚙
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <button
+                class="logout-btn"
+                id="logoutBtn"
+            >
+
+                <span>
+                    ↪
+                </span>
+
+                <span>
+                    Log out
+                </span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <main class="main-content">
+
+
+        <header class="topbar">
+
+            <div class="page-title">
+
+                <h1>
+                    Your profile
+                </h1>
+
+                <p>
+                    Your music profile and activity.
+                </p>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- PROFILE -->
+
+        <div class="glass-card profile-card">
+
+            <div class="profile-header">
+
+                <div
+                    class="profile-avatar-large"
+                    id="profileAvatar"
+                >
+                    G
+                </div>
+
+
+                <div class="profile-details">
+
+                    <h2 id="profileName">
+                        Guest User
+                    </h2>
+
+                    <p id="profileEmail">
+                        Guest session
+                    </p>
+
+                    <span
+                        class="account-badge"
+                        id="accountBadge"
+                    >
+                        GUEST SESSION
+                    </span>
+
+                </div>
+
+            </div>
+
+
+
+            <div class="info-grid">
+
+                <div class="info-box">
+
+                    <span>
+                        Account Type
+                    </span>
+
+                    <strong id="accountType">
+                        Guest
+                    </strong>
+
+                </div>
+
+
+                <div class="info-box">
+
+                    <span>
+                        Email
+                    </span>
+
+                    <strong id="infoEmail">
+                        Not signed in
+                    </strong>
+
+                </div>
+
+            </div>
+
+        </div>
+
+
+
+        <!-- TABS -->
+
+        <div class="tabs">
+
+            <button
+                class="tab active"
+                data-tab="history"
+            >
+                History
+            </button>
+            <button
+                class="tab"
+                data-tab="favorites"
+            >
+                <a href="download.html">Download</a>
+            </button>
+
+        </div>
+
+
+
+        <!-- HISTORY -->
+
+        <section
+            class="tab-panel active"
+            id="historyPanel"
+        >
+
+            <div class="section-header">
+
+                <h2>
+                    Listening History
+                </h2>
+
+            </div>
+
+
+            <div class="track-list">
+
+                <div class="track-row">
+
+                    <img
+                        class="track-image"
+                        src="https://images.unsplash.com/photo-1516280440614-37939bbacd81?w=300"
+                        alt="Lovely"
+                    >
+
+                    <div class="track-info">
+
+                        <h4>
+                            Lovely
+                        </h4>
+
+                        <p>
+                            Billie Eilish
+                        </p>
+
+                    </div>
+
+                    <div class="track-actions">
+
+                        <button class="track-button">
+                            ▶
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="track-row">
+
+                    <img
+                        class="track-image"
+                        src="https://images.unsplash.com/photo-1493225457124-a3eb161ffa5f?w=300"
+                        alt="Perfect"
+                    >
+
+                    <div class="track-info">
+
+                        <h4>
+                            Perfect
+                        </h4>
+
+                        <p>
+                            Ed Sheeran
+                        </p>
+
+                    </div>
+
+                    <div class="track-actions">
+
+                        <button class="track-button">
+                            ▶
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- FAVORITES -->
+
+        <section
+            class="tab-panel"
+            id="favoritesPanel"
+        >
+
+            <div class="section-header">
+
+                <h2>
+                    Favorite Music
+                </h2>
+
+            </div>
+
+
+            <div class="empty-state">
+
+                <div class="empty-state-icon">
+                    ♡
+                </div>
+
+                <p>
+                    Your favorite songs will appear here.
+                </p>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="scripts/shared/audio.js"></script>
+    <script src="scripts/app/navigation.js"></script>
+    <script src="scripts/app/account.js"></script>
+    <script src="scripts/app/appearance.js"></script>
+    <script src="scripts/app/interface.js"></script>
+    <script src="scripts/app/library.js"></script>
+    <script src="scripts/app/start.js"></script>
+
+</body>
+
+</html>

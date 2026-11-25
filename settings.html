@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>Mood To Music — Settings</title>
+
+    <link
+        rel="stylesheet"
+        href="styles/app.css"
+    >
+
+</head>
+
+
+<body>
+
+
+    <!-- =================================================
+         SIDEBAR
+         ================================================= -->
+
+    <aside class="sidebar">
+
+        <div class="logo">
+
+            <div class="logo-icon">
+                🎵
+            </div>
+
+            <div class="logo-text">
+                Mood<br>
+                To Music
+            </div>
+
+        </div>
+
+
+        <div class="sidebar-profile">
+
+            <div
+                class="sidebar-avatar"
+                id="sideAvatar"
+            >
+                G
+            </div>
+
+            <div class="sidebar-user-info">
+
+                <h4 id="sideName">
+                    Guest
+                </h4>
+
+                <p id="sideEmail">
+                    Session only
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <nav class="nav-menu">
+
+            <a
+                href="home.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    ⌂
+                </span>
+
+                <span>
+                    Home
+                </span>
+
+            </a>
+
+
+            <a
+                href="you.html"
+                class="nav-item"
+            >
+
+                <span class="nav-icon">
+                    ◉
+                </span>
+
+                <span>
+                    Your profile
+                </span>
+
+            </a>
+
+
+            <a
+                href="settings.html"
+                class="nav-item active"
+            >
+
+                <span class="nav-icon">
+                    ⚙
+                </span>
+
+                <span>
+                    Settings
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <button
+                class="logout-btn"
+                id="settingsLogout"
+            >
+
+                <span>
+                    ↪
+                </span>
+
+                <span>
+                    Log out
+                </span>
+
+            </button>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =================================================
+         MAIN
+         ================================================= -->
+
+    <main class="main-content">
+
+
+        <header class="topbar">
+
+            <div class="page-title">
+
+                <h1>
+                    Settings
+                </h1>
+
+                <p>
+                    Customize your Mood To Music experience.
+                </p>
+
+            </div>
+
+        </header>
+
+
+
+        <div class="settings-container">
+
+
+            <!-- ACCOUNT -->
+
+            <section class="settings-card">
+
+                <h3>
+                    Account
+                </h3>
+
+
+                <div class="setting-item">
+
+                    <div class="setting-info">
+
+                        <h4>
+                            Account
+                        </h4>
+
+                        <p>
+                            Current account:
+                            <span id="settingsAccount">
+                                Guest session
+                            </span>
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- APPEARANCE -->
+
+            <section class="settings-card">
+
+                <h3>
+                    Appearance
+                </h3>
+
+
+                <div class="setting-item">
+
+                    <div class="setting-info">
+
+                        <h4>
+                            Dark Mode
+                        </h4>
+
+                        <p>
+                            Use the dark cinematic music theme.
+                        </p>
+
+                    </div>
+
+
+                    <label class="switch">
+
+                        <input
+                            type="checkbox"
+                            id="darkToggle"
+                        >
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- PLAYBACK -->
+
+            <section class="settings-card">
+
+                <h3>
+                    Playback
+                </h3>
+
+
+                <div class="setting-item">
+
+                    <div class="setting-info">
+
+                        <h4>
+                            Data Saver
+                        </h4>
+
+                        <p>
+                            Reduce data usage when streaming online music.
+                        </p>
+
+                    </div>
+
+
+                    <label class="switch">
+
+                        <input
+                            type="checkbox"
+                            id="dataSaverToggle"
+                        >
+
+                        <span class="slider"></span>
+
+                    </label>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- STORAGE -->
+
+            <section class="settings-card">
+
+                <h3>
+                    Storage
+                </h3>
+
+
+                <div class="settings-action">
+    <div class="settings-action-info">
+        <div class="settings-action-icon">🕘</div>
+
+        <div class="settings-action-text">
+            <h4>Listening History</h4>
+            <p>See the songs you've recently listened to</p>
+        </div>
+    </div>
+
+    <button class="settings-action-btn" onclick="viewHistory()">
+        View
+    </button>
+</div>
+
+
+<div class="settings-action">
+    <div class="settings-action-info">
+        <div class="settings-action-icon">⬇</div>
+
+        <div class="settings-action-text">
+            <h4>Downloads</h4>
+            <p>Open your offline music collection</p>
+        </div>
+    </div>
+
+    <button class="settings-action-btn" onclick="goToDownloadPage()">
+        Open
+    </button>
+</div>
+            </section>
+
+
+
+            <!-- ABOUT -->
+
+            <section class="settings-card">
+
+                <h3><a href="about.html">
+                     About
+                </a>
+                   
+                </h3>
+
+
+                <div class="setting-item">
+
+                    <div class="setting-info">
+
+                        <h4>
+                            Mood To Music
+                        </h4>
+
+                        <p>
+                            Discover music based on your mood,
+                            emotions, artists and genres.
+                        </p>
+
+                    </div>
+
+                </div>
+
+            </section>
+
+
+
+            <!-- ACCOUNT ACTION -->
+
+            <section class="settings-card">
+
+                <h3>
+                    Account Actions
+                </h3>
+
+
+                <div class="setting-item">
+
+                    <div class="setting-info">
+
+                        <h4>
+                            Sign Out
+                        </h4>
+
+                        <p>
+                            Return to the login page.
+                        </p>
+
+                    </div>
+
+
+                    <button
+                        class="primary-btn"
+                        id="logoutBtn"
+                        style="width:auto;padding:0 18px;"
+                    >
+                        Log Out
+                    </button>
+
+                </div>
+
+            </section>
+
+
+        </div>
+
+    </main>
+
+
+    <script src="scripts/shared/audio.js"></script>
+    <script src="scripts/app/navigation.js"></script>
+    <script src="scripts/app/account.js"></script>
+    <script src="scripts/app/appearance.js"></script>
+    <script src="scripts/app/interface.js"></script>
+    <script src="scripts/app/library.js"></script>
+    <script src="scripts/app/start.js"></script>
+
+</body>
+
+</html>

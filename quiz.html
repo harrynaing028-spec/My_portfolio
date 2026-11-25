@@ -1,0 +1,281 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mood To Music</title>
+
+    <link rel="stylesheet" href="styles/quiz.css">
+</head>
+
+<body>
+    <button id="home-back-btn" class="home-back-btn"><a href="home.html">←</a>
+</button>
+     
+    <!-- Floating Music Notes -->
+    <div class="music-notes" aria-hidden="true">
+        <span>♪</span>
+        <span>♫</span>
+        <span>♪</span>
+        <span>♬</span>
+        <span>♫</span>
+        <span>♪</span>
+    </div>
+
+
+    <!-- Main Container -->
+    <main class="container">
+
+        <!-- =========================
+             START SCREEN
+        ========================== -->
+
+       
+<section id="start-screen">
+
+            <div class="music-icon">
+                🎧
+            </div>
+
+            <h1>
+                Mood To Music
+            </h1>
+
+            <p class="intro-text">
+                Discover your mood and<br>
+                find the music that matches you.
+            </p>
+
+            <button id="start-btn">
+                <span>🎵</span>
+                Discover My Mood
+            </button>
+         
+
+        </section>
+
+
+        <!-- =========================
+             QUIZ SCREEN
+        ========================== -->
+
+        <section id="quiz-screen" class="hide">
+
+            <!-- Quiz Header -->
+            <div class="quiz-header">
+
+                <span id="question-number">
+                    Question 1 / 11
+                </span>
+
+                <span id="progress-percent">
+                    0%
+                </span>
+
+            </div>
+
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+
+                <div
+                    id="progress-bar"
+                    class="progress-bar">
+                </div>
+
+            </div>
+
+
+            <!-- Question -->
+            <h2 id="question">
+                Question
+            </h2>
+
+
+            <!-- Options -->
+            <div id="options">
+
+                <!-- JavaScript will add options here -->
+
+            </div>
+
+
+            <!-- Next Button -->
+            <button
+                id="next-btn"
+                disabled>
+
+                Next
+                <span>→</span>
+
+            </button>
+
+        </section>
+
+
+        <!-- =========================
+             ANALYZING SCREEN
+        ========================== -->
+
+        <section
+            id="loading-screen"
+            class="hide">
+
+            <div class="loading-icon">
+                🎧
+            </div>
+
+            <h2>
+                Analyzing Your Mood...
+            </h2>
+
+            <p>
+                Finding the music that matches you
+            </p>
+
+
+            <!-- Loading Bar -->
+            <div class="loading-container">
+
+                <div
+                    id="loading-bar"
+                    class="loading-bar">
+                </div>
+
+            </div>
+
+
+            <span id="loading-percent">
+                0%
+            </span>
+
+        </section>
+
+
+        <!-- =========================
+             RESULT SCREEN
+        ========================== -->
+
+        <section
+            id="result-screen"
+            class="hide">
+
+            <p class="result-title">
+                ✨ YOUR MOOD ✨
+            </p>
+
+
+            <!-- Mood Emoji -->
+            <div
+                id="result-emoji"
+                class="result-emoji">
+
+                😊
+
+            </div>
+
+
+            <!-- Mood Name -->
+            <h2
+                id="result-mood">
+
+                Happy
+
+            </h2>
+
+
+            <!-- Result Message -->
+            <p
+                id="result-message"
+                class="result-message">
+
+                You seem to be feeling Happy!
+
+            </p>
+
+
+            <!-- Music Message -->
+            <p class="music-message">
+
+                🎵 Ready to discover your perfect playlist?
+
+            </p>
+
+
+            <!-- Buttons -->
+            <div class="result-buttons">
+
+                <button
+                    id="music-btn"
+                    class="primary-result-btn">
+
+                    🎵 Find My Music
+
+                </button>
+
+
+                <button
+                    id="restart-btn"
+                    class="secondary-result-btn">
+
+                    🔄 Take Quiz Again
+
+                </button>
+
+            </div>
+
+        </section>
+        <!-- =========================
+     RECOMMENDATION SCREEN
+========================= -->
+
+<section id="recommendation-screen" class="hide">
+
+    <p class="result-title">
+        ✨ YOUR MUSIC MATCH ✨
+    </p>
+
+    <h2 id="song-mood">
+        Happy Vibes 🎉
+    </h2>
+
+    <p class="recommendation-subtitle">
+        These songs match your mood
+    </p>
+
+    <!-- Horizontal Song Cards -->
+    <div id="song-list" class="song-list">
+        <!-- JavaScript will create cards here -->
+    </div>
+
+    <!-- Buttons -->
+    <div class="result-buttons">
+
+        <button
+            id="back-btn"
+            class="primary-result-btn">
+            🔄 Try Again
+        </button>
+
+        <button
+            id="exit-btn"
+            class="secondary-result-btn">
+            ❌ <a href="home.html">Exit</a>
+        </button>
+
+    </div>
+
+</section>
+
+    </main>
+
+
+    <!-- JavaScript -->
+    <script src="scripts/quiz.js"></script>
+    <a href="home.html" class="home-btn"></a>
+
+</body>
+
+</html>

@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Artist</title>
+    <link rel="stylesheet" href="styles/artists.css">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Playfair+Display:wght@700&family=Montserrat:wght@400;700;900&family=Dancing+Script:wght@700&display=swap" rel="stylesheet">
+</head>
+<body>
+     <button class="download-back-button" onclick="goBack()" aria-label="Go back">
+        ←
+    </button>
+
+    <div class="container">
+
+        <!-- Artist 1:Ariana Grande -->
+        <div class="ticket ticket-nicki" onclick="goToTicket(event,'ariana')">
+            <div class="ticket-left">
+                <div class="ticket-header">
+                    
+                    <h1 class="artist-name" id="1"><a href="artist.html?id=ariana" class="c1">Ariana <br> Grande</a></h1>
+                    
+                </div>
+                
+            </div>
+            <div class="ticket-image ariana-bg">
+    <img src="artists/ariana.jpg" alt="Ariana Grande" class="artist-photo">
+</div>
+            <div class="ticket-divider"></div>
+        </div>
+
+        <!-- Artist 2:Taylor swift  -->
+        <div class="ticket ticket-sabrina" onclick="goToTicket(event,'taylor')">
+            <div class="ticket-left">
+                <div class="ticket-header">
+                
+                    <h1 class="artist-name short-n-sweet"><a href="artist.html?id=taylor" class="c2">Taylor <br> Swift</a></h1>
+                </div>
+                
+            </div>
+            <div class="ticket-image ariana-bg">
+    <img src="artists/taylor3.jpg" alt="Ariana Grande" class="artist-photo">
+</div>
+            <div class="ticket-divider"></div>
+        </div>
+
+        <!-- Artist 3:Bruno Mars -->
+        <div class="ticket ticket-billie" onclick="goToTicket(event,'bruno')">
+            <div class="ticket-left">
+                <div class="ticket-header">   
+                    <h1 class="artist-name billie-name"><a href="artist.html?id=bruno" class="c3"> Bruno <br> Mars</a></h1>   
+                </div>
+                
+            </div>
+            
+            <div class="ticket-image ariana-bg">
+    <img src="artists/brono.jpg" alt="Ariana Grande" class="artist-photo">
+</div>
+            <div class="ticket-divider"></div>
+        </div>
+
+        <!-- Artist 4:Justin Bieber -->
+        <div class="ticket ticket-katseye" onclick="goToTicket(event,'justin')">
+            <div class="ticket-left">
+                <div class="ticket-header">
+                    
+                    <h1 class="artist-name katseye-name"><a href="artist.html?id=justin" class="c4">Justin<br>Bieber</a></h1>
+                    
+                </div>
+                
+            </div>
+            
+            <div class="ticket-image ariana-bg">
+    <img src="artists/justin.jpg" alt="Ariana Grande" class="artist-photo">
+</div>
+            <div class="ticket-divider"></div>
+        </div>
+
+    
+<!--Artistt 5: Sabrina Carpenter -->
+<div class="ticket ticket-taylor" onclick="goToTicket(event,'sabrina')">
+    <div class="ticket-left">
+        <div class="ticket-header">
+            
+            <h1 class="artist-name taylor-name"><a href="artist.html?id=sabrina" class="c5">Sabrina <br> Carpenter</a></h1>
+            
+        </div>
+        
+    </div>
+    <div class="ticket-image ariana-bg">
+    <img src="artists/sabrina.jpg" alt="Ariana Grande" class="artist-photo">
+</div>
+    <div class="ticket-divider"></div>
+</div>
+
+<!-- Artist 6: Billie Eilish -->
+<div class="ticket ticket-dua" onclick="goToTicket(event,'bilie')">
+    <div class="ticket-left">
+        <div class="ticket-header">
+            <h1 class="artist-name dua-name"><a href="artist.html?id=billie" class="c6">Billie <br> Eilish</a></h1>
+            
+        </div>
+    </div>
+
+    <div class="ticket-image ariana-bg">
+    <img src="artists/billie.jpg" alt="Ariana Grande" class="artist-photo">
+</div>
+    <div class="ticket-divider"></div>
+</div>
+
+<!-- Artist 7:Olivia Rodrigo -->
+<div class="ticket ticket-ariana" onclick="goToTicket(event,'oliva')">
+    <div class="ticket-left">
+        <div class="ticket-header">
+            <h1 class="artist-name ariana-name"><a href="artist.html?id=olivia" class="c7">Olivia <br> Rodrigo</a></h1>
+        </div>
+        
+    </div>
+
+    <div class="ticket-image ariana-bg">
+    <img src="artists/olivia.jpg" alt="Ariana Grande" class="artist-photo">
+</div>
+    <div class="ticket-divider"></div>
+</div>
+
+</div>
+    <!-- Floating particles -->
+    <div class="particles" id="particles" ></div>
+    <div class="music-notes" aria-hidden="true">
+        <span>♪</span>
+        <span>♫</span>
+        <span>♪</span>
+        <span>♬</span>
+        <span>♫</span>
+        <span>♪</span>
+    </div>
+
+
+    <script src="scripts/artists/directory.js"></script>
+</body>
+</html>

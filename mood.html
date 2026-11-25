@@ -1,0 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Mood & Music Experience</title>
+
+    <link rel="stylesheet" href="styles/mood.css">
+</head>
+
+<body>
+
+    <!-- ==============================
+         BACKGROUND ANIMATION
+    =============================== -->
+    <button class="download-back-button" onclick="goBack()" aria-label="Go back">
+        ←
+    </button>
+
+    <div class="background-glow glow-one"></div>
+    <div class="background-glow glow-two"></div>
+    <div class="background-glow glow-three"></div>
+
+
+    <!-- ==============================
+         VIEW 1: MOOD SELECTOR
+    =============================== -->
+
+    <div class="view active" id="selectorView">
+
+        <div class="card">
+
+            <div class="title">
+                How are you feeling?
+            </div>
+
+
+            <!-- Mood Face -->
+
+            <div class="face-wrapper mood-happy" id="face">
+
+                <div class="eyes">
+                    <div class="eye"></div>
+                    <div class="eye"></div>
+                </div>
+
+                <div class="mouth"></div>
+
+            </div>
+
+
+            <!-- Mood Name -->
+
+            <div class="mood-label" id="moodLabel">
+                Happy
+            </div>
+
+
+            <!-- Mood Slider -->
+
+            <div class="slider-container">
+
+                <input
+                    type="range"
+                    min="0"
+                    max="5"
+                    value="0"
+                    class="range-slider"
+                    id="moodSlider" max="6"
+                >
+
+                <div class="mood-scale">
+                    <span>😊</span>
+                    <span>😢</span>
+                    <span>😌</span>
+                    <span>😠</span>
+                    <span>⚡</span>
+                    <span>❤️</span>
+                </div>
+
+            </div>
+
+
+            <!-- Continue -->
+
+            <button
+                class="action-btn"
+                onclick="openMusicPage()"
+            >
+                Continue to Songs
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==============================
+         VIEW 2: PLAYLIST
+    =============================== -->
+
+    <div class="view" id="musicView">
+
+        <div class="card">
+
+            <div class="title" id="musicTitle">
+                Happy Songs
+            </div>
+
+
+            <div
+                class="song-list"
+                id="songList"
+            ></div>
+
+
+            <button
+                class="action-btn back-btn"
+                onclick="openSelectorPage()"
+            >
+                Change Mood
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==============================
+         VIEW 3: FULL PLAYER
+    =============================== -->
+
+    <div class="view" id="playerView">
+
+        <div class="player-card">
+
+
+            <!-- Minimize -->
+
+            <button
+                class="pull-down-btn"
+                onclick="minimizePlayer()"
+                title="Minimize Player"
+            >
+                ▼
+            </button>
+
+
+            <!-- Track Information -->
+
+            <div class="player-header">
+
+                <div class="track-meta">
+
+                    <div
+                        class="now-title"
+                        id="nowTitle"
+                    >
+                        Beauty and a Beat
+                    </div>
+
+                    <div
+                        class="now-artist"
+                        id="nowArtist"
+                    >
+                        Justin Bieber ft. Nicki Minaj
+                    </div>
+
+                </div>
+
+
+                <button
+                    class="fav-btn"
+                    id="favBtn"
+                    onclick="toggleFavorite()"
+                >
+                    ♥
+                </button>
+
+            </div>
+
+
+
+            <!-- Player Controls -->
+
+            <div class="player-controls">
+
+                <button
+                    class="ctrl-icon"
+                    id="shuffleBtn"
+                    onclick="toggleShuffle()"
+                >
+                    🔀
+                </button>
+
+
+                <button
+                    class="ctrl-icon"
+                    onclick="prevSong()"
+                >
+                    ⏮
+                </button>
+
+
+                <button
+                    class="play-main-btn"
+                    id="mainPlayBtn"
+                    onclick="togglePlay()"
+                >
+                    ▶
+                </button>
+
+
+                <button
+                    class="ctrl-icon"
+                    onclick="nextSong()"
+                >
+                    ⏭
+                </button>
+
+
+                <button
+                    class="ctrl-icon"
+                    id="repeatBtn"
+                    onclick="cycleRepeat()"
+                >
+
+                    🔁
+
+                    <span
+                        class="badge"
+                        id="repeatBadge"
+                        style="display:none;"
+                    >
+                        1
+                    </span>
+
+                </button>
+
+            </div>
+
+
+
+            <!-- Progress -->
+
+            <div class="progress-wrapper">
+
+                <div class="timestamps">
+
+                    <span id="currTime">
+                        00:00
+                    </span>
+
+                    <span id="durTime">
+                        00:00
+                    </span>
+
+                </div>
+
+
+                <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value="0"
+                    class="seek-bar"
+                    id="seekBar"
+                    oninput="seekTrack(this.value)"
+                >
+
+            </div>
+
+
+
+            <!-- Comments -->
+
+            <button
+                class="action-btn back-btn comments-button"
+                onclick="openCommentsSheet()"
+            >
+                💬 Open Comments
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==============================
+         MINI PLAYER
+    =============================== -->
+
+    <div
+        class="mini-player"
+        id="miniPlayer"
+    >
+
+        <div
+            class="mini-info"
+            onclick="expandPlayer()"
+        >
+
+            <div
+                class="mini-title"
+                id="miniTitle"
+            >
+                Beauty and a Beat
+            </div>
+
+            <div
+                class="mini-artist"
+                id="miniArtist"
+            >
+                Justin Bieber ft. Nicki Minaj
+            </div>
+
+        </div>
+
+
+        <div class="mini-controls">
+
+            <button
+                class="mini-btn"
+                id="miniPlayBtn"
+                onclick="togglePlay()"
+            >
+                ▶
+            </button>
+
+            <button
+                class="mini-btn"
+                onclick="expandPlayer()"
+            >
+                ▲
+            </button>
+
+        </div>
+
+    </div>
+
+
+
+    <!-- ==============================
+         COMMENTS
+    =============================== -->
+
+    <div
+        class="tiktok-comments-overlay"
+        id="commentsOverlay"
+    >
+
+        <div class="tiktok-comments-sheet">
+
+
+            <div class="comments-header">
+
+                Comments
+
+                <button
+                    class="close-comments"
+                    onclick="closeCommentsSheet()"
+                >
+                    ✕
+                </button>
+
+            </div>
+
+
+            <div
+                class="comments-body"
+                id="tiktokCommentsList"
+            ></div>
+
+
+            <div class="comments-footer">
+
+                <input
+                    type="text"
+                    class="tk-input"
+                    id="tkInput"
+                    placeholder="Add comment..."
+                    onkeydown="if(event.key === 'Enter') addTiktokComment()"
+                >
+
+                <button
+                    class="tk-submit"
+                    onclick="addTiktokComment()"
+                >
+                    Send
+                </button>
+
+            </div>
+
+        </div>
+
+    </div>
+
+
+    <audio id="moodAudioPlayer" preload="metadata" aria-label="Mood audio player"></audio>
+    <script src="scripts/mood.js"></script>
+    <a href="home.html" class="home-btn">
+    
+</a>
+
+</body>
+</html>

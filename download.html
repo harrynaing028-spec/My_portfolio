@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mood To Music - Downloads</title>
+    <link rel="stylesheet" href="styles/download.css">
+</head>
+
+<body>
+
+    <div class="glow glow-1"></div>
+    <div class="glow glow-2"></div>
+
+    <button class="download-back-button" onclick="goBack()" aria-label="Go back">
+        ←
+    </button>
+
+    <main class="download-container">
+
+        <section class="download-header">
+            <div class="download-icon">⬇️</div>
+
+            <div>
+                <h1>Downloads</h1>
+                <p>Your offline music collection</p>
+            </div>
+        </section>
+
+        <section class="storage-card">
+            <div class="storage-top">
+                <span>Offline Storage</span>
+                <span id="storageText">0 songs</span>
+            </div>
+
+            <div class="storage-bar">
+                <div class="storage-progress" id="storageProgress"></div>
+            </div>
+
+            <p>
+                Download your favorite songs and enjoy them offline.
+            </p>
+        </section>
+
+        <section class="songs-section">
+
+            <div class="section-title">
+                <h2>Downloaded Songs</h2>
+                <span id="songCount">0</span>
+            </div>
+
+            <div class="empty-download" id="emptyDownload">
+                <div class="empty-icon">🎧</div>
+
+                <h3>No downloaded songs</h3>
+
+                <p>
+                    Songs you download will appear here
+                    so you can listen to them offline.
+                </p>
+
+                <button class="browse-button" onclick="goBack()">
+                    Browse Music
+                </button>
+            </div>
+
+            <div class="download-list" id="downloadList"></div>
+
+        </section>
+
+    </main>
+
+    <audio
+        id="downloadAudio"
+        preload="metadata"
+        aria-label="Downloaded music player"
+    ></audio>
+
+    <script src="scripts/shared/audio.js"></script>
+
+    <script src="scripts/download.js"></script>
+
+</body>
+</html>
