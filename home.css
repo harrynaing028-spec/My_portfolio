@@ -1,0 +1,115 @@
+/* =========================================================
+           STANDALONE JUMPING LAMP SECTION
+           ========================================================= */
+        .lamp-stage {
+        position: relative;
+        width: 100%;
+        max-width: 700px;
+        height: 220px;
+        margin: 10px 0 35px;
+        display: flex;
+        justify-content: center;
+        align-items: flex-end;
+        border-bottom: 2px dashed var(--border);
+        overflow: visible;
+    }
+        .lamp-link-wrapper {
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        width: 100px;
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        cursor: pointer;
+        will-change: transform;
+        z-index: 10;
+        text-decoration: none;
+    }
+
+.lamp-svg {
+        filter: drop-shadow(0 0 12px var(--lamp-shadow));
+        transition: filter 0.3s ease, fill 0.3s ease, stroke 0.3s ease;
+    }
+
+    .lamp-link-wrapper:hover .lamp-svg {
+        filter: drop-shadow(0 0 20px rgba(236, 72, 153, 0.8));
+    }
+        /* Light Cone Gradient matching site colors */
+        .light-beam {
+        position: absolute;
+        top: 35px;
+        left: 50%;
+        width: 340px;
+        height: 200px;
+        margin-left: -170px;
+        background: linear-gradient(to bottom, var(--lamp-beam-top), var(--lamp-beam-bottom));
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+        transform-origin: top center;
+        pointer-events: none;
+        z-index: -1;
+        transition: background 0.3s ease;
+    }
+
+    .lamp-hint-text {
+        position: absolute;
+        bottom: -28px;
+        font-size: 11px;
+        color: var(--muted);
+        letter-spacing: 1px;
+        text-transform: uppercase;
+        pointer-events: none;
+        white-space: nowrap;
+    }
+        /* Dark Theme (Default) */
+:root {
+    --lamp-body: #faf5ff;
+    --lamp-shadow: rgba(168, 85, 247, 0.4);
+    --lamp-beam-top: rgba(244, 114, 182, 0.5);
+    --lamp-beam-bottom: rgba(168, 85, 247, 0.02);
+}
+
+/* Light Theme (Applied via your Settings switch) */
+body.light-mode {
+    --lamp-body: #334155; /* Dark gray for light background contrast */
+    --lamp-shadow: rgba(168, 85, 247, 0.2);
+    --lamp-beam-top: rgba(236, 72, 153, 0.35); /* Slightly darker/more vivid for light mode visibility */
+    --lamp-beam-bottom: rgba(168, 85, 247, 0.01);
+}
+/* Dark Mode Colors (Default) */
+:root {
+    --lamp-body: #faf5ff;          /* Off-white for dark background */
+    --lamp-shadow: rgba(168, 85, 247, 0.4);
+    --lamp-beam-top: rgba(244, 114, 182, 0.65);
+    --lamp-beam-bottom: rgba(168, 85, 247, 0.02);
+}
+
+/* Light Mode Colors (Activated when light-mode class is added to body or html) */
+body.light-mode {
+    --lamp-body: #250c29;          /* Dark charcoal/black for high contrast */
+    --lamp-shadow: rgba(168, 85, 247, 0.25);
+    --lamp-beam-top: rgba(91, 14, 48, 0.45); /* Adjusted gradient for light background */
+    --lamp-beam-bottom: rgba(168, 85, 247, 0.05);
+}
+/* Dark Mode Default */
+.lamp-svg .lamp-body-part {
+    fill: #faf5ff;
+    stroke: #faf5ff;
+    transition: fill 0.3s ease, stroke 0.3s ease;
+}
+
+/* Light Mode Overrides — Covers both common class names */
+body.light-mode .lamp-svg .lamp-body-part,
+body.light-theme .lamp-svg .lamp-body-part,
+[data-theme="light"] .lamp-svg .lamp-body-part {
+    fill: #1f1f2c !important;
+    stroke: #241825 !important;
+}
+
+/* Adjust light beam gradient for light backgrounds */
+body.light-mode .light-beam,
+body.light-theme .light-beam,
+[data-theme="light"] .light-beam {
+    background: linear-gradient(to bottom, rgba(219, 39, 119, 0.45), rgba(168, 85, 247, 0.05));
+}

@@ -1,0 +1,1432 @@
+/* =========================================
+   MOOD TO MUSIC
+   PREMIUM PURPLE UI
+========================================= */
+
+
+/* ---------- RESET ---------- */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+/* ---------- BODY ---------- */
+
+body {
+    min-height: 100vh;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    padding: 20px;
+
+    font-family: Arial, Helvetica, sans-serif;
+
+    color: white;
+
+    background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(150, 70, 255, 0.35),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(255, 80, 180, 0.25),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #090019,
+            #17002f,
+            #0b0018
+        );
+
+    overflow: hidden;
+}
+
+
+/* ---------- BACKGROUND GLOW ---------- */
+
+body::before {
+    content: "";
+
+    position: fixed;
+
+    width: 380px;
+    height: 380px;
+
+    border-radius: 50%;
+
+    background: rgba(139, 92, 246, 0.15);
+
+    filter: blur(90px);
+
+    top: -150px;
+    left: -120px;
+
+    z-index: -2;
+
+    animation: glowMove 8s ease-in-out infinite alternate;
+}
+
+
+body::after {
+    content: "";
+
+    position: fixed;
+
+    width: 350px;
+    height: 350px;
+
+    border-radius: 50%;
+
+    background: rgba(236, 72, 153, 0.12);
+
+    filter: blur(90px);
+
+    right: -130px;
+    bottom: -130px;
+
+    z-index: -2;
+
+    animation: glowMove 10s ease-in-out infinite alternate-reverse;
+}
+
+.home-back-btn a{
+    text-decoration: none;
+    color: white;
+}
+/* ---------- MAIN CARD ---------- */
+
+.container {
+    position: relative;
+
+    width: 100%;
+    max-width: 650px;
+
+    min-height: 500px;
+
+    padding: 45px;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    text-align: center;
+
+    background: rgba(255, 255, 255, 0.075);
+
+    border: 1px solid rgba(255, 255, 255, 0.15);
+
+    border-radius: 30px;
+
+    backdrop-filter: blur(22px);
+    -webkit-backdrop-filter: blur(22px);
+
+    box-shadow:
+        0 25px 70px rgba(0, 0, 0, 0.55),
+        inset 0 1px 1px rgba(255, 255, 255, 0.08);
+
+    animation: cardAppear 0.8s ease;
+}
+
+
+/* ---------- HIDE ---------- */
+
+.hide {
+    display: none !important;
+}
+
+
+/* =========================================
+   FLOATING MUSIC NOTES
+========================================= */
+
+.music-notes {
+    position: fixed;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    overflow: hidden;
+
+    z-index: -1;
+}
+
+
+.music-notes span {
+    position: absolute;
+
+    bottom: -60px;
+
+    color: rgba(218, 180, 255, 0.5);
+
+    font-size: 25px;
+
+    animation: floatNote linear infinite;
+
+    text-shadow:
+        0 0 12px rgba(168, 85, 247, 0.8);
+}
+
+
+/* Different positions */
+
+.music-notes span:nth-child(1) {
+    left: 8%;
+    animation-duration: 8s;
+    animation-delay: 0s;
+}
+
+
+.music-notes span:nth-child(2) {
+    left: 25%;
+    font-size: 32px;
+    animation-duration: 11s;
+    animation-delay: 2s;
+}
+
+
+.music-notes span:nth-child(3) {
+    left: 45%;
+    font-size: 22px;
+    animation-duration: 9s;
+    animation-delay: 4s;
+}
+
+
+.music-notes span:nth-child(4) {
+    left: 65%;
+    font-size: 35px;
+    animation-duration: 12s;
+    animation-delay: 1s;
+}
+
+
+.music-notes span:nth-child(5) {
+    left: 82%;
+    font-size: 26px;
+    animation-duration: 10s;
+    animation-delay: 5s;
+}
+
+
+.music-notes span:nth-child(6) {
+    left: 92%;
+    font-size: 30px;
+    animation-duration: 13s;
+    animation-delay: 3s;
+}
+
+
+/* =========================================
+   START SCREEN
+========================================= */
+
+#start-screen {
+    width: 100%;
+
+    animation: fadeUp 0.8s ease;
+}
+
+
+.music-icon {
+    font-size: 68px;
+
+    margin-bottom: 18px;
+
+    display: inline-block;
+
+    filter:
+        drop-shadow(
+            0 0 18px
+            rgba(168, 85, 247, 0.8)
+        );
+
+    animation: headphoneFloat 3s ease-in-out infinite;
+}
+
+
+#start-screen h1 {
+    font-size: 48px;
+
+    margin-bottom: 16px;
+
+    font-weight: 800;
+
+    letter-spacing: -1px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #d8b4fe,
+            #f9a8d4
+        );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.intro-text {
+    color: rgba(255, 255, 255, 0.68);
+
+    font-size: 17px;
+
+    line-height: 1.7;
+
+    margin-bottom: 32px;
+}
+
+
+/* =========================================
+   GENERAL BUTTON
+========================================= */
+
+#start-btn,
+#next-btn {
+    border: none;
+
+    border-radius: 50px;
+
+    padding: 15px 30px;
+
+    color: white;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #ec4899
+        );
+
+    box-shadow:
+        0 8px 25px
+        rgba(139, 92, 246, 0.3);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        opacity 0.25s ease;
+}
+
+
+#start-btn:hover,
+#next-btn:hover:not(:disabled) {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 35px
+        rgba(236, 72, 153, 0.45);
+}
+
+
+#start-btn:active,
+#next-btn:active:not(:disabled) {
+    transform: scale(0.97);
+}
+
+
+/* =========================================
+   QUIZ SCREEN
+========================================= */
+
+#quiz-screen {
+    width: 100%;
+
+    animation: fadeUp 0.5s ease;
+}
+
+
+/* ---------- QUIZ HEADER ---------- */
+
+.quiz-header {
+    width: 100%;
+
+    display: flex;
+
+    justify-content: space-between;
+
+    align-items: center;
+
+    margin-bottom: 10px;
+}
+
+
+#question-number {
+    color: #d8b4fe;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 1px;
+}
+
+
+#progress-percent {
+    color: rgba(255, 255, 255, 0.55);
+
+    font-size: 13px;
+
+    font-weight: bold;
+}
+
+
+/* ---------- PROGRESS ---------- */
+
+.progress-container {
+    width: 100%;
+
+    height: 8px;
+
+    margin-bottom: 32px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background: rgba(255, 255, 255, 0.1);
+}
+
+
+.progress-bar {
+    width: 0%;
+
+    height: 100%;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #8b5cf6,
+            #ec4899
+        );
+
+    box-shadow:
+        0 0 15px
+        rgba(168, 85, 247, 0.7);
+
+    transition: width 0.5s ease;
+}
+
+
+/* ---------- QUESTION ---------- */
+
+#question {
+    font-size: 27px;
+
+    line-height: 1.5;
+
+    margin-bottom: 27px;
+
+    color: #ffffff;
+}
+
+
+/* =========================================
+   RADIO OPTIONS
+========================================= */
+
+#options {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 13px;
+
+    margin-bottom: 28px;
+}
+
+
+.option {
+    position: relative;
+
+    width: 100%;
+
+    min-height: 58px;
+
+    padding: 15px 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    gap: 15px;
+
+    text-align: left;
+
+    cursor: pointer;
+
+    border-radius: 16px;
+
+    border: 1px solid
+        rgba(255, 255, 255, 0.14);
+
+    background:
+        rgba(255, 255, 255, 0.055);
+
+    color: white;
+
+    transition:
+        all 0.25s ease;
+}
+
+
+.option:hover {
+    transform: translateX(4px);
+
+    border-color:
+        rgba(190, 145, 255, 0.7);
+
+    background:
+        rgba(139, 92, 246, 0.13);
+}
+
+
+/* ---------- REAL RADIO ---------- */
+
+.option input[type="radio"] {
+    position: absolute;
+
+    opacity: 0;
+
+    pointer-events: none;
+}
+
+
+/* ---------- CUSTOM RADIO ---------- */
+
+.radio-circle {
+    position: relative;
+
+    flex-shrink: 0;
+
+    width: 22px;
+    height: 22px;
+
+    border-radius: 50%;
+
+    border: 2px solid
+        rgba(255, 255, 255, 0.55);
+
+    transition: all 0.25s ease;
+}
+
+
+/* ---------- SELECTED ---------- */
+
+.option.selected {
+    border-color: #b77aff;
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(139, 92, 246, 0.35),
+            rgba(236, 72, 153, 0.2)
+        );
+
+    box-shadow:
+        0 0 22px
+        rgba(168, 85, 247, 0.25);
+
+    transform: translateX(4px);
+}
+
+
+.option.selected .radio-circle {
+    border-color: #d8b4fe;
+
+    background: #8b5cf6;
+
+    box-shadow:
+        0 0 14px
+        rgba(167, 117, 255, 0.75);
+}
+
+
+.option.selected .radio-circle::after {
+    content: "";
+
+    position: absolute;
+
+    width: 8px;
+    height: 8px;
+
+    border-radius: 50%;
+
+    background: white;
+
+    top: 50%;
+    left: 50%;
+
+    transform:
+        translate(-50%, -50%);
+
+    animation: radioPop 0.2s ease;
+}
+
+
+.option-text {
+    font-size: 16px;
+
+    line-height: 1.45;
+}
+
+
+/*===== */
+
+#next-btn {
+    min-width: 135px;
+
+    opacity: 0.45;
+}
+
+
+#next-btn:disabled {
+    cursor: not-allowed;
+
+    box-shadow: none;
+
+    transform: none;
+}
+
+
+/* =========================================
+   LOADING SCREEN
+========================================= */
+
+#loading-screen {
+    width: 100%;
+
+    animation: fadeUp 0.5s ease;
+}
+
+
+.loading-icon {
+    font-size: 62px;
+
+    margin-bottom: 20px;
+
+    display: inline-block;
+
+    filter:
+        drop-shadow(
+            0 0 18px
+            rgba(168, 85, 247, 0.8)
+        );
+
+    animation:
+        loadingPulse 1.2s ease-in-out infinite;
+}
+
+
+#loading-screen h2 {
+    font-size: 27px;
+
+    margin-bottom: 12px;
+}
+
+
+#loading-screen p {
+    color:
+        rgba(255, 255, 255, 0.62);
+
+    font-size: 15px;
+
+    margin-bottom: 25px;
+}
+
+
+.loading-container {
+    width: 100%;
+
+    max-width: 420px;
+
+    height: 9px;
+
+    margin: 0 auto 12px;
+
+    overflow: hidden;
+
+    border-radius: 20px;
+
+    background:
+        rgba(255, 255, 255, 0.1);
+}
+
+
+.loading-bar {
+    width: 0%;
+
+    height: 100%;
+
+    border-radius: 20px;
+
+    background:
+        linear-gradient(
+            90deg,
+            #8b5cf6,
+            #ec4899
+        );
+
+    box-shadow:
+        0 0 18px
+        rgba(236, 72, 153, 0.6);
+
+    transition: width 0.08s linear;
+}
+
+
+#loading-percent {
+    color: #d8b4fe;
+
+    font-size: 14px;
+
+    font-weight: bold;
+}
+
+
+/* =========================================
+   RESULT SCREEN
+========================================= */
+
+#result-screen {
+    width: 100%;
+
+    animation:
+        resultAppear 0.8s ease;
+}
+
+
+.result-title {
+    color: #d8b4fe;
+
+    font-size: 14px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+
+    margin-bottom: 15px;
+}
+
+
+.result-emoji {
+    font-size: 76px;
+
+    margin-bottom: 8px;
+
+    display: inline-block;
+
+    animation:
+        resultEmoji 0.8s ease;
+}
+
+
+#result-mood {
+    font-size: 42px;
+
+    margin-bottom: 12px;
+
+    font-weight: 800;
+
+    background:
+        linear-gradient(
+            90deg,
+            #ffffff,
+            #d8b4fe,
+            #f9a8d4
+        );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+
+.result-message {
+    color:
+        rgba(255, 255, 255, 0.75);
+
+    font-size: 17px;
+
+    margin-bottom: 20px;
+}
+
+
+.music-message {
+    color:
+        rgba(255, 255, 255, 0.55);
+
+    font-size: 14px;
+
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   RESULT BUTTONS
+========================================= */
+
+.result-buttons {
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 12px;
+}
+
+
+.primary-result-btn,
+.secondary-result-btn {
+    width: 100%;
+
+    padding: 15px;
+
+    border-radius: 15px;
+
+    font-size: 16px;
+
+    font-weight: bold;
+
+    cursor: pointer;
+
+    transition: 0.3s ease;
+}
+.secondary-result-btn a{
+    text-decoration: none;
+    color: #ffffff;
+}
+
+/* PRIMARY */
+
+.primary-result-btn {
+    border: none;
+
+    color: white;
+
+    background:
+        linear-gradient(
+            135deg,
+            #8b5cf6,
+            #ec4899
+        );
+
+    box-shadow:
+        0 8px 25px
+        rgba(139, 92, 246, 0.3);
+}
+
+
+.primary-result-btn:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 12px 30px
+        rgba(236, 72, 153, 0.45);
+}
+
+
+/* SECONDARY */
+
+.secondary-result-btn {
+    border:
+        1px solid
+        rgba(255, 255, 255, 0.18);
+
+    color:
+        rgba(255, 255, 255, 0.85);
+
+    background:
+        rgba(255, 255, 255, 0.06);
+}
+
+
+.secondary-result-btn:hover {
+    transform: translateY(-3px);
+
+    border-color:
+        rgba(190, 145, 255, 0.7);
+
+    background:
+        rgba(139, 92, 246, 0.15);
+}
+
+
+/* =========================================
+   ANIMATIONS
+========================================= */
+
+
+/* Card */
+
+@keyframes cardAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            translateY(25px)
+            scale(0.96);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            translateY(0)
+            scale(1);
+    }
+}
+
+
+/* Fade */
+
+@keyframes fadeUp {
+
+    from {
+        opacity: 0;
+
+        transform: translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform: translateY(0);
+    }
+}
+
+
+/* Background */
+
+@keyframes glowMove {
+
+    from {
+        transform:
+            translate(0, 0)
+            scale(1);
+    }
+
+    to {
+        transform:
+            translate(60px, 40px)
+            scale(1.15);
+    }
+}
+
+
+/* Headphones */
+
+@keyframes headphoneFloat {
+
+    0%,
+    100% {
+        transform: translateY(0);
+    }
+
+    50% {
+        transform: translateY(-9px);
+    }
+}
+
+
+/* Radio */
+
+@keyframes radioPop {
+
+    from {
+        transform:
+            translate(-50%, -50%)
+            scale(0);
+    }
+
+    to {
+        transform:
+            translate(-50%, -50%)
+            scale(1);
+    }
+}
+
+
+/* Floating Notes */
+
+@keyframes floatNote {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.6;
+    }
+
+    50% {
+        transform:
+            translateY(-50vh)
+            translateX(25px)
+            rotate(15deg);
+
+        opacity: 0.7;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            translateX(-30px)
+            rotate(-15deg);
+
+        opacity: 0;
+    }
+}
+/* Loading */
+
+@keyframes loadingPulse {
+
+    0%,
+    100% {
+        transform: scale(1);
+    }
+
+    50% {
+        transform: scale(1.12);
+    }
+}
+
+
+/* Result */
+
+@keyframes resultAppear {
+
+    from {
+        opacity: 0;
+
+        transform:
+            scale(0.85)
+            translateY(20px);
+    }
+
+    to {
+        opacity: 1;
+
+        transform:
+            scale(1)
+            translateY(0);
+    }
+}
+
+
+@keyframes resultEmoji {
+
+    0% {
+        transform:
+            scale(0)
+            rotate(-15deg);
+
+        opacity: 0;
+    }
+
+    70% {
+        transform:
+            scale(1.15)
+            rotate(5deg);
+    }
+
+    100% {
+        transform:
+            scale(1)
+            rotate(0deg);
+
+        opacity: 1;
+    }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    body {
+        padding: 14px;
+    }
+
+
+    .container {
+        min-height: 520px;
+
+        padding: 30px 20px;
+
+        border-radius: 24px;
+    }
+
+
+    #start-screen h1 {
+        font-size: 35px;
+    }
+
+
+    .music-icon {
+        font-size: 58px;
+    }
+
+
+    .intro-text {
+        font-size: 15px;
+    }
+
+
+    #question {
+        font-size: 21px;
+    }
+
+
+    .option {
+        min-height: 55px;
+
+        padding: 13px 14px;
+    }
+
+
+    .option-text {
+        font-size: 15px;
+    }
+
+
+    #result-mood {
+        font-size: 35px;
+    }
+
+
+    .result-emoji {
+        font-size: 65px;
+    }
+
+
+    .music-notes span {
+        font-size: 20px;
+    }
+
+}
+/* =========================================
+   RECOMMENDATION SCREEN
+========================================= 
+/* =========================================
+   HORIZONTAL SONG RECOMMENDATION
+========================================= */
+
+#recommendation-screen {
+    width: 100%;
+    text-align: center;
+    animation: recommendationIn 0.6s ease;
+}
+
+#song-mood {
+    margin: 8px 0;
+
+    font-size: 30px;
+    font-weight: 700;
+
+    background: linear-gradient(
+        90deg,
+        #ffffff,
+        #d8b4fe,
+        #f9a8d4
+    );
+
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.recommendation-subtitle {
+    color: rgba(255,255,255,0.7);
+    margin-bottom: 25px;
+}
+
+
+/* =========================================
+   SONG CARDS
+========================================= */
+
+.song-list {
+
+    display: flex;
+
+    flex-direction: row;
+
+    gap: 18px;
+
+    width: 100%;
+
+    overflow-x: auto;
+
+    padding: 10px 5px 20px;
+
+    scroll-behavior: smooth;
+
+    scrollbar-width: thin;
+}
+
+
+/* =========================================
+   SINGLE CARD
+========================================= */
+
+.song-card {
+
+    flex: 0 0 180px;
+
+    width: 180px;
+
+    min-height: 245px;
+
+    padding: 10px;
+
+    border-radius: 18px;
+
+    background: rgba(255,255,255,0.09);
+
+    border: 1px solid rgba(255,255,255,0.15);
+
+    backdrop-filter: blur(12px);
+
+    box-shadow:
+        0 8px 25px rgba(0,0,0,0.18);
+
+    transition:
+        transform 0.3s ease,
+        box-shadow 0.3s ease,
+        background 0.3s ease;
+
+    text-align: left;
+}
+
+
+/* Hover */
+
+.song-card:hover {
+
+    transform: translateY(-8px);
+
+    background: rgba(255,255,255,0.15);
+
+    box-shadow:
+        0 15px 35px rgba(139,92,246,0.3);
+
+}
+
+
+/* =========================================
+   SONG IMAGE
+========================================= */
+
+.song-card-image {
+
+    width: 100%;
+
+    aspect-ratio: 1 / 1;
+
+    object-fit: cover;
+
+    border-radius: 14px;
+
+    display: block;
+
+    margin-bottom: 12px;
+}
+
+
+/* =========================================
+   SONG INFORMATION
+========================================= */
+
+.song-title {
+
+    font-size: 15px;
+
+    font-weight: 700;
+
+    color: white;
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+    margin-bottom: 5px;
+}
+
+.song-artist {
+
+    font-size: 12px;
+
+    color: rgba(255,255,255,0.65);
+
+    white-space: nowrap;
+
+    overflow: hidden;
+
+    text-overflow: ellipsis;
+
+}
+
+
+/* =========================================
+   PLAY BUTTON
+========================================= */
+
+.song-play {
+
+    width: 38px;
+
+    height: 38px;
+
+    border-radius: 50%;
+
+    border: none;
+
+    margin-top: 10px;
+
+    cursor: pointer;
+
+    font-size: 16px;
+
+    background: rgba(255,255,255,0.15);
+
+    color: white;
+
+    transition: 0.25s;
+}
+
+.song-play:hover {
+
+    transform: scale(1.1);
+
+    background: rgba(255,255,255,0.3);
+
+}
+
+
+/* =========================================
+   BUTTON AREA
+========================================= */
+
+#recommendation-screen .result-buttons {
+
+    margin-top: 10px;
+
+}
+
+
+/* =========================================
+   ANIMATION
+========================================= */
+
+@keyframes recommendationIn {
+
+    from {
+
+        opacity: 0;
+
+        transform: translateY(20px);
+
+    }
+
+    to {
+
+        opacity: 1;
+
+        transform: translateY(0);
+
+    }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 600px) {
+
+    .song-list {
+
+        overflow-x: auto;
+
+        padding-bottom: 18px;
+
+    }
+
+    .song-card {
+
+        flex: 0 0 165px;
+
+        width: 165px;
+
+        min-height: 225px;
+
+    }
+
+    #song-mood {
+
+        font-size: 25px;
+
+    }
+
+}
+.home-back-btn {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+
+    width: 42px;
+    height: 42px;
+
+    border: none;
+    border-radius: 50%;
+
+    background: rgba(255, 255, 255, 0.10);
+    color: white;
+
+    font-size: 24px;
+    line-height: 42px;
+
+    cursor: pointer;
+
+    z-index: 9999;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition: 0.3s ease;
+}
+
+.home-back-btn:hover {
+    background: rgba(255, 255, 255, 0.20);
+    transform: translateX(-3px);
+}

@@ -1,0 +1,651 @@
+/* ===== RESET & BASE ===== */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Montserrat', sans-serif;
+   background:
+        radial-gradient(
+            circle at 15% 20%,
+            rgba(150, 70, 255, 0.35),
+            transparent 30%
+        ),
+        radial-gradient(
+            circle at 85% 80%,
+            rgba(218, 67, 152, 0.25),
+            transparent 30%
+        ),
+        linear-gradient(
+            135deg,
+            #090019,
+            #17002f,
+            #0b0018
+        );
+    min-height: 100vh;
+    overflow-x: hidden;
+}
+.download-back-button {
+    position: fixed;
+
+    top: 24px;
+    left: 24px;
+
+    width: 52px;
+    height: 52px;
+
+    border: 1px solid rgba(255, 255, 255, 0.14);
+
+    border-radius: 50%;
+
+    background:
+        rgba(18, 12, 35, 0.72);
+
+    backdrop-filter: blur(18px);
+    -webkit-backdrop-filter: blur(18px);
+
+    color: white;
+
+    font-size: 27px;
+
+    cursor: pointer;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    box-shadow:
+        0 10px 35px rgba(0, 0, 0, 0.35),
+        inset 0 1px 0 rgba(255, 255, 255, 0.08);
+
+    transition:
+        transform 0.25s ease,
+        background 0.25s ease,
+        border-color 0.25s ease;
+
+    z-index: 1000;
+}
+
+.download-back-button:hover {
+    transform: translateX(-3px) scale(1.06);
+
+    background:
+        linear-gradient(
+            135deg,
+            rgba(139, 92, 246, 0.35),
+            rgba(236, 72, 153, 0.25)
+        );
+
+    border-color:
+        rgba(167, 139, 250, 0.5);
+}
+
+.download-back-button:active {
+    transform: scale(0.92);
+}
+.container {
+    max-width: 900px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    position: relative;
+    z-index: 2;
+}
+
+/* ===== PARTICLES ===== */
+.particles {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none;
+    z-index: 1;
+}
+
+.particle {
+    position: absolute;
+    border-radius: 50%;
+    animation: floatParticle linear infinite;
+    opacity: 0.3;
+}
+
+@keyframes floatParticle {
+    0% {
+        transform: translateY(100vh) rotate(0deg);
+        opacity: 0;
+    }
+    10% {
+        opacity: 0.3;
+    }
+    90% {
+        opacity: 0.3;
+    }
+    100% {
+        transform: translateY(-100px) rotate(720deg);
+        opacity: 0;
+    }
+}
+
+/* ===== TICKET BASE ===== */
+.ticket {
+    display: flex;
+    border-radius: 16px;
+    margin-bottom: 30px;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    animation: slideIn 0.8s ease-out forwards;
+    opacity: 0;
+    transform: translateY(50px);
+    box-shadow: 0 10px 40px rgba(0,0,0,0.3);
+}
+
+.ticket:nth-child(1) { animation-delay: 0.1s; }
+.ticket:nth-child(2) { animation-delay: 0.3s; }
+.ticket:nth-child(3) { animation-delay: 0.5s; }
+.ticket:nth-child(4) { animation-delay: 0.7s; }
+
+@keyframes slideIn {
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.ticket:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0 20px 60px rgba(0,0,0,0.5);
+}
+
+.ticket:active {
+    transform: translateY(-4px) scale(0.98);
+}
+
+.ticket-left {
+    flex: 1;
+    padding: 30px 35px;
+    position: relative;
+    z-index: 2;
+}
+
+
+.ticket-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55%;
+    height: 100%;
+    z-index: 1;
+    opacity: 0.15;
+    transition: opacity 0.4s;
+}
+
+.ticket:hover .ticket-image {
+    opacity: 0.25;
+}
+
+/* ===== TICKET HEADER ===== */
+.presents-text {
+    font-size: 11px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    margin-bottom: 5px;
+    opacity: 0.8;
+}
+
+.artist-name {
+    font-family: 'Bebas Neue', sans-serif;
+    font-size: 48px;
+    line-height: 1;
+    margin-bottom: 5px;
+    letter-spacing: 2px;
+}
+
+.tour-name {
+    font-size: 13px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    opacity: 0.8;
+}
+/* ===== Atrist 1:Arinan Grande ===== */
+.ticket-nicki {
+    background: linear-gradient(135deg, #f79dca, #f77ebe, #e973ae);
+    color: white;
+    text-shadow: 0 0 20px rgba(252, 17, 29, 0.5);
+}
+
+.ticket-nicki .artist-name {
+    font-size: 100px;
+}
+
+.ticket-nicki .ticket-image {
+    background: radial-gradient(circle at 70% 50%, rgba(255,255,255,0.3), transparent 60%);
+}
+
+
+/* ===== Atrist 2: Taylar swift===== */
+.ticket-sabrina {
+    background: linear-gradient(135deg, #fdf2f8, #a4e7f0, #fcbadf);
+    color: #333;
+    text-shadow: 0 0 20px rgba(0, 68, 255, 0.5);
+}
+
+.ticket-sabrina .artist-name{
+    font-size: 100px;
+    color: #010d2e;
+    text-shadow: 0 0 20px rgba(0, 68, 255, 0.5);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+
+
+.ticket-sabrina .ticket-image {
+    background: radial-gradient(circle at 70% 50%, rgba(255,182,193,0.4), transparent 60%);
+}
+
+/* ===== Atrist 3: Broun Mars ===== */
+.ticket-billie {
+    background: linear-gradient(135deg, #1a1a6e, #3131c2, #2727dd);
+    color: white;
+}
+
+.ticket-billie .artist-name.billie-name {
+    font-size: 100px;
+    color: #FF6B00;
+    text-shadow: 0 0 20px rgba(173, 191, 240, 0.5);
+
+}
+.ticket-billie .ticket-image {
+    background: radial-gradient(circle at 70% 50%, rgba(255,107,0,0.2), transparent 60%);
+}
+/* ===== Atrist 4:Justin Bieber ===== */
+.ticket-katseye {
+    background: linear-gradient(135deg, #331212, #791919, #4d1717);
+    color: white;
+}
+
+.ticket-katseye .artist-name.katseye-name {
+    font-size: 100px;
+    color: #ff0000;
+    text-shadow: 0 0 20px rgba(255, 141, 65, 0.5);
+}
+.ticket-katseye .ticket-image {
+    background: radial-gradient(circle at 70% 50%, rgba(255,0,0,0.15), transparent 60%);
+}
+/* ===== Atrist 5: Sabrina Carpenter ===== */
+.ticket-taylor {
+    background: linear-gradient(135deg, #f3e304, #eaf81e, #fcf834);
+    color: white;
+}
+
+.ticket-taylor .artist-name.taylor-name {
+    font-size: 100px;
+    background: linear-gradient(135deg, #e4bb08, #FFA500);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+    text-shadow: 0 0 20px rgba(147, 248, 122, 0.5);
+}
+
+.ticket-taylor .ticket-image {
+    background: radial-gradient(circle at 70% 50%, rgba(255,215,0,0.15), transparent 60%);
+}
+
+.ticket-taylor::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,215,0,0.08) 0%, transparent 50%);
+    animation: glowPulse 3s ease-in-out infinite;
+    z-index: 0;
+}
+
+/* ===== atrist 6:  Bilie Eilish===== */
+.ticket-dua {
+    background: linear-gradient(135deg, #0a2a3a, #0d4f6e, #00b4d8);
+    color: white;
+}
+
+.ticket-dua .artist-name.dua-name {
+    font-size: 100px;
+    font-style: italic;
+    color: #00f5ff;
+    text-shadow: 0 0 20px rgba(0,245,255,0.5);
+}
+
+
+/* =====Artist 7:Oliva Rodrigo===== */
+.ticket-ariana {
+    background: linear-gradient(135deg, #6a186d, #79316f, #a170a1);
+    color: #4a2040;
+}
+.ticket-ariana .artist-name.ariana-name {
+    font-size: 90px;
+    color: #46092c;
+    text-shadow: 0 0 20px rgba(224, 241, 241, 0.5);
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+}
+
+.ticket-ariana .ticket-image {
+    background: radial-gradient(circle at 70% 50%, rgba(194,24,91,0.15), transparent 60%);
+}
+
+.ticket-ariana::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(194,24,91,0.06) 0%, transparent 50%);
+    animation: glowPulse 3s ease-in-out infinite;
+    z-index: 0;
+}
+
+/* ===== ANIMATION DELAY FOR NEW TICKETS ===== */
+.ticket:nth-child(5) { animation-delay: 0.9s; }
+.ticket:nth-child(6) { animation-delay: 1.1s; }
+.ticket:nth-child(7) { animation-delay: 1.3s; }
+
+.ticket:nth-child(5)::after { animation-delay: 0.5s; }
+.ticket:nth-child(6)::after { animation-delay: 1.5s; }
+.ticket:nth-child(7)::after { animation-delay: 2.5s; }
+
+/* ===== GLOW EFFECTS ===== */
+.ticket-nicki::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,255,255,0.1) 0%, transparent 50%);
+    animation: glowPulse 3s ease-in-out infinite;
+    z-index: 0;
+}
+
+.ticket-billie::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,107,0,0.08) 0%, transparent 50%);
+    animation: glowPulse 4s ease-in-out infinite;
+    z-index: 0;
+}.ticket-katseye::before {
+    content: '';
+    position: absolute;
+    top: -50%;
+    left: -50%;
+    width: 200%;
+    height: 200%;
+    background: radial-gradient(circle, rgba(255,0,0,0.08) 0%, transparent 50%);
+    animation: glowPulse 3.5s ease-in-out infinite;
+    z-index: 0;
+}
+
+@keyframes glowPulse {
+    0%, 100% { transform: scale(1); opacity: 0.5; }
+    50% { transform: scale(1.1); opacity: 1; }
+}
+
+/* ===== SHIMMER EFFECT ===== */
+.ticket::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 60%;
+    height: 100%;
+    background: linear-gradient(
+        90deg,
+        transparent,
+        rgba(255,255,255,0.1),
+        transparent
+    );
+    z-index: 5;
+    animation: shimmer 4s ease-in-out infinite;
+}
+
+.ticket:nth-child(2)::after {
+    animation-delay: 1s;
+}
+.ticket:nth-child(3)::after {
+    animation-delay: 2s;
+}
+.ticket:nth-child(4)::after {
+    animation-delay: 3s;
+}
+
+@keyframes shimmer {
+    0% { left: -100%; }
+    50% { left: 150%; }
+    100% { left: 150%; }
+}
+
+/* ===== CLICK RIPPLE ===== */
+.ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255,255,255,0.4);
+    transform: scale(0);
+    animation: rippleEffect 0.6s ease-out;
+    pointer-events: none;
+    z-index: 10;
+}
+
+@keyframes rippleEffect {
+    to {
+        transform: scale(4);
+        opacity: 0;
+    }
+}
+
+/* ===== RESPONSIVE ===== */
+@media (max-width: 700px) {
+    .ticket {
+        flex-direction: column;
+    }
+    .ticket-divider {
+        right: 0;
+        top: auto;
+        bottom: auto;
+        left: 30px;
+        right: 30px;
+        height: 2px;
+        width: auto;
+        border-left: none;
+        border-top: 2px dashed rgba(255,255,255,0.4);
+    }
+    
+    .ticket-sabrina .ticket-divider {
+        border-top-color: rgba(0,0,0,0.2);
+    }
+    
+    .artist-name {
+        font-size: 36px !important;
+    }
+    
+    .ticket-image {
+        display: none;
+    }
+}
+/* =========================================
+   FLOATING MUSIC NOTES
+========================================= */
+
+.music-notes {
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    overflow: hidden;
+    z-index: -1;
+}
+
+.music-notes span {
+    position: absolute;
+    bottom: -60px;
+    color: rgba(218, 180, 255, 0.5);
+    font-size: 25px;
+    animation: floatNote linear infinite;
+
+    text-shadow:
+        0 0 12px rgba(168, 85, 247, 0.8);
+}
+.music-notes span:nth-child(1) {
+    left: 8%;
+    animation-duration: 8s;
+    animation-delay: 0s;
+}
+
+.music-notes span:nth-child(2) {
+    left: 25%;
+    font-size: 32px;
+    animation-duration: 11s;
+    animation-delay: 2s;
+}
+
+.music-notes span:nth-child(3) {
+    left: 45%;
+    font-size: 22px;
+    animation-duration: 9s;
+    animation-delay: 4s;
+}
+
+.music-notes span:nth-child(4) {
+    left: 65%;
+    font-size: 35px;
+    animation-duration: 12s;
+    animation-delay: 1s;
+}
+
+.music-notes span:nth-child(5) {
+    left: 82%;
+    font-size: 26px;
+    animation-duration: 10s;
+    animation-delay: 5s;
+}
+
+.music-notes span:nth-child(6) {
+    left: 92%;
+    font-size: 30px;
+    animation-duration: 13s;
+    animation-delay: 3s;
+}
+@keyframes floatNote {
+
+    0% {
+        transform:
+            translateY(0)
+            rotate(0deg);
+        opacity: 0;
+    }
+
+    10% {
+        opacity: 0.6;
+    }
+
+    50% {
+        transform:
+            translateY(-50vh)
+            translateX(25px)
+            rotate(15deg);
+        opacity: 0.7;
+    }
+
+    100% {
+        transform:
+            translateY(-110vh)
+            translateX(-30px)
+            rotate(-15deg);
+        opacity: 0;
+    }
+}
+/* ===== ARTIST PHOTO STYLING ===== */
+.ticket-image {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 55%;
+    height: 100%;
+    z-index: 1;
+    overflow: hidden;
+
+    /* ပုံကို မမှိန်လွန်းအောင် */
+    opacity: 0.45;
+
+    transition: opacity 0.4s;
+}
+
+.ticket:hover .ticket-image {
+    /* Hover လုပ်ရင် ပိုရှင်းလာမယ် */
+    opacity: 0.60;
+}
+
+.artist-photo {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+
+    /* ပုံအရောင် ပိုရှင်းအောင် */
+    filter: brightness(0.95) contrast(1.15) saturate(1.15);
+
+    transition: all 0.4s;
+}
+
+.ticket:hover .artist-photo {
+    filter: brightness(1) contrast(1.2) saturate(1.2);
+    transform: scale(1.05);
+}
+
+/* Ariana Grande specific */
+.ticket-ariana .ticket-image {
+    background: linear-gradient(
+        135deg,
+        rgba(194,24,91,0.15),
+        rgba(232,184,208,0.05)
+    );
+}
+
+.ticket-ariana .artist-photo {
+    mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 10%
+    );
+
+    -webkit-mask-image: linear-gradient(
+        to right,
+        transparent 0%,
+        black 10%
+    );
+}
+a{
+    text-decoration-line: none;
+}
+.c1{
+    color: white;
+}
+.c2{
+
+    color: #010d2e; ;
+}.c3{
+    color: #FF6B00;
+}
+.c4{
+    color: #ff0000;
+}
+.c6{
+color: #00f5ff;
+}
+.c7{
+    color: #46092c;
+}
